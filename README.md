@@ -1,4 +1,4 @@
-基于webpack 5.7 && react 18 && rect-dom 18搭建的React前端框架
+基于webpack 5.7 && react 18 && react-dom 18 搭建的React前端框架
 
 无论是开发环境还是生产环境react 18兼容之前的17版本
 
