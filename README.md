@@ -1,9 +1,10 @@
-基于webpack 5.7 && react 18 && react-dom 18 搭建的React前端框架
+基于webpack@5.7 && react@17.0.2 && react-dom@17.0.2 搭建的React前端框架
 
-无论是开发环境还是生产环境react 18兼容之前的17版本
+由于React@18.0.0不再支持ReactDom.render(使用createRoot代替)，不采用最新的版本
 
 安装模块：npm i
 
 开发环境：npm run dev
 
 生产环境：npm run build
+
