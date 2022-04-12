@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
+  performance: { hints: false },
   entry: join(__dirname, '../src/index.js'),
   output: {
     filename: 'js/[contenthash].[name].js',
@@ -15,7 +16,6 @@ module.exports = {
       '@pub': join(__dirname, '../public')
     },
     extensions: ['.js', '.ts', '.jsx'],
-    // extensions: ['.js', '.jsx', '.json'],
     modules: [join(__dirname, '../node_modules')]
   },
   optimization: {
@@ -82,7 +82,11 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react'],
-              // plugins: ['@babel/plugin-proposal-class-properties']
+              // plugins: [['import', {
+              //   'libraryName': 'antd',
+              //   'libraryDirectory': 'es',
+              //   'style': 'css'
+              // }]]
             }
           }
         ]

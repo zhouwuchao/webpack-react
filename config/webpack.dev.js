@@ -1,5 +1,6 @@
 const { join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
   entry: join(__dirname, '../src/index.js'),
@@ -35,8 +36,9 @@ module.exports = {
       template: join(__dirname, '../public/index.html'),
       filename: 'index.html',
       favicon: join(__dirname, '../public/favicon.ico'),
-    })
-  ],
+    }),
+    new ReactRefreshWebpackPlugin()
+  ].filter(Boolean),
   module: {
     rules: [
       {
@@ -47,16 +49,6 @@ module.exports = {
         test: /\.less$/i,
         use: ['style-loader', 'css-loader', 'less-loader']
       },
-      // {
-      //   test: /\.m?js$/,
-      //   exclude: /(node_modules|bower_components)/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: ['@babel/preset-env']
-      //     }
-      //   }
-      // },
       {
         test: /\.(jpe?g|png|gif)/,
         type: 'asset/resource',
@@ -82,10 +74,10 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: require.resolve('babel-loader'),
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react'],
-              // plugins: ['@babel/plugin-proposal-class-properties']
+              plugins: ['react-refresh/babel']
             }
           }
         ]

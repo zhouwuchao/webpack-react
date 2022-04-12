@@ -8,3 +8,8 @@
 
 生产环境：npm run build
 
+开发环境自动开启服务，支持CSS样式、JavaScript代码热重载，开启tree-shaking。
+
+支持less，开箱即用的antd Design。
+
+
