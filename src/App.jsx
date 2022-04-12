@@ -38,7 +38,6 @@ class App extends Component {
     )
   }
   handleClick = item => {
-    console.log(item)
     this.setState({
       current: item.key
     })
